@@ -6,7 +6,7 @@ connections — it resumes partial downloads seamlessly, retries forever with
 exponential back-off, and accepts every flag that `huggingface-cli download`
 does.
 
----
+
 
 ## Features
 
@@ -22,14 +22,13 @@ does.
 - **SHA-256 verification** — optional integrity check after each file lands.
 - **Live progress bar** — shows percentage, bytes, speed, and ETA per file.
 
----
+
 
 ## Requirements
 
 - Python 3.9 or later
 - See `requirements.txt`
 
----
 
 ## Installation
 
@@ -44,7 +43,7 @@ pip install -r requirements.txt
 
 No package installation is required — run `hf_download.py` directly.
 
----
+
 
 ## Quick Start
 
@@ -66,7 +65,7 @@ python hf_download.py meta-llama/Meta-Llama-3-8B --token hf_XXXX
 # or export HUGGING_FACE_HUB_TOKEN=hf_XXXX
 ```
 
----
+
 
 ## Usage
 
@@ -103,7 +102,7 @@ python hf_download.py <repo_id> [OPTIONS]
 | `--retry-backoff X` | `1.5` | Exponential back-off multiplier |
 | `--retry-max-delay S` | `300.0` | Maximum wait cap (seconds) |
 
----
+
 
 ## How resuming works
 
@@ -116,7 +115,7 @@ and the remaining bytes are appended directly. If the server returns
 On retry after a failure the same logic applies — the tool re-checks the
 on-disk size and resumes from that point, so no data is ever re-downloaded.
 
----
+
 
 ## Authentication
 
@@ -133,7 +132,7 @@ python hf_download.py org/private-model
 
 Generate a token at <https://huggingface.co/settings/tokens>.
 
----
+
 
 ## Running the tests
 
@@ -156,7 +155,7 @@ calls are mocked. Coverage includes:
 - `RepositoryNotFoundError` exit handling
 - All 14 CLI flags and their defaults
 
----
+
 
 ## Project structure
 
@@ -168,41 +167,8 @@ hf_downloader/
 └── README.md             # This file
 ```
 
----
+
 
 ## License
 
-MIT
-uct-FP8",
-    max_tokens=65536,
-    tools=tools,
-)
-
-print(completion.choice[0])
-```
-
-## Best Practices
-
-To achieve optimal performance, we recommend the following settings:
-
-1. **Sampling Parameters**:
-   - We suggest using `temperature=0.7`, `top_p=0.8`, `top_k=20`, `repetition_penalty=1.05`.
-
-2. **Adequate Output Length**: We recommend using an output length of 65,536 tokens for most queries, which is adequate for instruct models.
-
-
-### Citation
-
-If you find our work helpful, feel free to give us a cite.
-
-```
-@misc{qwen3technicalreport,
-      title={Qwen3 Technical Report}, 
-      author={Qwen Team},
-      year={2025},
-      eprint={2505.09388},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2505.09388}, 
-}
-```
+[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
