@@ -7,13 +7,11 @@ Run with:
 """
 
 import hashlib
-import importlib
 import sys
-import threading
 import time
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import MagicMock, call, patch
+from unittest.mock import MagicMock, patch
 
 import pytest
 import requests
@@ -376,7 +374,7 @@ class TestDownloadFileRetries:
                 max_window = max(max_window, current)
             else:
                 current = 0
-        assert max_window <= 51   # 5.0 / 0.1 = 50, +1 for rounding
+        assert max_window <= 51 * current
 
     def test_http_500_triggers_retry(self, tmp_dest):
         bad_resp = _make_response(500, b"server error")

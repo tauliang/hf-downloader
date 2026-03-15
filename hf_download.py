@@ -18,7 +18,7 @@ from typing import Optional
 
 import requests
 from huggingface_hub import HfApi, hf_hub_url, constants
-from huggingface_hub.utils import build_hf_headers, EntryNotFoundError, RepositoryNotFoundError
+from huggingface_hub.utils import build_hf_headers, RepositoryNotFoundError
 
 # ── Logging ──────────────────────────────────────────────────────────────────
 
