@@ -1,4 +1,4 @@
-# hf_downloader
+# hf-downloader
 
 A resilient command-line tool for downloading large models and datasets from
 HuggingFace Hub. Built for multi-hundred-gigabyte models over unstable
@@ -34,8 +34,8 @@ does.
 
 ```bash
 # 1. Clone or copy this project
-git clone https://github.com/your-org/hf_downloader.git
-cd hf_downloader
+git clone https://github.com/your-org/hf-downloader.git
+cd hf-downloader
 
 # 2. Install dependencies
 pip install -r requirements.txt
@@ -160,7 +160,7 @@ calls are mocked. Coverage includes:
 ## Project structure
 
 ```
-hf_downloader/
+hf-downloader/
 ├── hf_download.py        # Main downloader — run this
 ├── test_hf_download.py   # pytest test suite
 ├── requirements.txt      # Runtime + test dependencies
